@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+  <style>
+   body {
+      background-color:#84D9C9;
+   }
+   #countdown {
+      font-size:100px;
+      text-align:center;
+      top: 50%;
+      left: 50%;
+      position:fixed;
+      color:#F2D98D;
+      font-family: 'PT Sans', sans-serif;
+      
+   }
+  </style>
+</head>
+<body>
+    <center><span id="countdown">10</span></center>
+
+<script src="vendors/query/jquery-1.12.1.js"></script>	
+<script>
+var settimmer = 0;
+$(function() {
+	window.setInterval(function() {
+      var timeCounter = $("span[id=countdown]").html();
+      var updateTime = eval(timeCounter) - eval(1);
+      $("span[id=countdown]").html(updateTime); 
+
+      if(updateTime == 0) {
+      	window.location = ("index.html"); 
+      }
+		
+	}, 500);
+});
+</script>
+</body>
+</html>
+
